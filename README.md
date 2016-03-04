@@ -3,23 +3,27 @@ Docker container for spark stand alone cluster
 
 This repository contains a set of scripts and configuration files to run a [Apache Spark](https://spark.apache.org/) standalone cluster from [Docker](https://www.docker.io/) container.
 
+Please refer to [this blog post ](http://sometechshit.blogspot.ru/2015/04/running-spark-standalone-cluster-in.html) for documentation.
+This was forked from epahomov/docker-spark
+
+
 To run master execute:
 
 ```
-./start-master.sh
+./start-spark-master.sh
 ```
 
 To run worker execute:
 
 ```
-./start-worker.sh
+./start-spark-worker.sh
 ```
 You can run multiple workers. Every worker would be able to find master by it's container name "spark_master".
 
 To run spark shell against this cluster execute:
 
 ```
-./spark-shell.sh
+./start-spark-shell.sh
 ```
 You can run multiple shells. Every shell would be able to find master by it's container name "spark_master".
  
@@ -28,8 +32,8 @@ If you like to run another container against this cluster, please read [explanat
 If you need to increase memory or core count or pass any [other parameter](https://spark.apache.org/docs/latest/configuration.html) to spark, please use:
 
 ```
-./spark-shell.sh --executor-memory 300M --total-executor-cores 3
-./start-worker.sh --memory 700M
+./start-spark-shell.sh --executor-memory 300M --total-executor-cores 3
+./start-spark-worker.sh --memory 700M
 ```
 
 If you execute these images without scripts mentioned above, please:
