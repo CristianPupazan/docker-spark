@@ -1,0 +1,17 @@
+master:
+  image: cristianpupazan1/docker-spark
+  tty: true
+  command: /start-master.sh
+  container_name: spark_master
+  ports:
+    - "8080:8080"
+    - "7077:7077"
+
+worker:
+  image: cristianpupazan1/docker-spark
+  tty: true
+  command: /start-worker.sh
+  ports:
+    - "8081:8081"
+  links:
+    - master:spark_master

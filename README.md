@@ -6,6 +6,11 @@ This repository contains a set of scripts and configuration files to run a [Apac
 Please refer to [this blog post ](http://sometechshit.blogspot.ru/2015/04/running-spark-standalone-cluster-in.html) for documentation.
 This was forked from epahomov/docker-spark
 
+To run using [docker-compose](https://docs.docker.com/compose/):
+
+```
+docker-compose up
+```
 
 To run master execute:
 
@@ -35,6 +40,18 @@ If you need to increase memory or core count or pass any [other parameter](https
 ./start-spark-shell.sh --executor-memory 300M --total-executor-cores 3
 ./start-spark-worker.sh --memory 700M
 ```
+UI for master:
+
+
+[http://localhost:8080/](http://localhost:8080/)
+
+
+UI for worker:
+    
+    
+[http://localhost:8081/](http://localhost:8081/)
+
+
 
 If you execute these images without scripts mentioned above, please:
 * Remeber to name master container as spark_master for correct working on linkage.
