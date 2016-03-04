@@ -1,0 +1,10 @@
+.idea/
+**/*.ipr
+**/*.iws
+**/*.iml
+target/
+*~
+*.retry
+**/*.pyc
+**/*.swp
+**/.DS_Store
